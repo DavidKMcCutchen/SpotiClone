@@ -13,9 +13,21 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
     "baseUrl": ".",
     "paths": {
-      "@capstone-project/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@capstone-project/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@capstone-project/common-ui": ["libs/common-ui/src/index.ts"],
+      "@capstone-project/core-data": ["libs/core-data/src/index.ts"],
+      "@capstone-project/core-state": ["libs/core-state/src/index.ts"],
+      "@capstone-project/environment": ["libs/environment/src/index.ts"],
+      "@capstone-project/material": ["libs/material/src/index.ts"],
+      "@capstone-project/pages": ["libs/pages/src/index.ts"],
+      "@capstone-project/pipes": ["libs/pipes/src/index.ts"],
+      "@capstone-project/shared": ["libs/shared/src/index.ts"],
+      "@capstone-project/theme": ["libs/theme/src/index.ts"],
+      "@capstone-project/ui-login": ["libs/ui-login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

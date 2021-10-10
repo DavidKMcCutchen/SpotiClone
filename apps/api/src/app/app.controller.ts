@@ -1,6 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
 
-import { Message } from '@capstone-project/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -8,8 +7,8 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
-  getData(): Message {
-    return this.appService.getData();
+  @Post('auth')
+  authenticate(@Body() body: { code: string }): any {
+    return this.appService.authenticateUser(body.code);
   }
 }

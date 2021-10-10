@@ -1,0 +1,106 @@
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
+
+$dark-gray: #181818;
+$light-gray: #b3b3b3;
+$black: black;
+
+// SCSS Mixins
+@mixin tablet {
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
+  }
+}
+
+// SCSS Styles
+.show {
+  overflow: visible;
+  height: auto;
+}
+
+.search-section {
+
+  &__nav-bar {
+    max-width: 98%;
+    margin: 0 auto;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__input-container {
+    margin-left: 15px;
+
+    @include desktop {
+      width: 320px;
+    }
+  }
+
+  &__input {
+    color: #000;
+    padding: 6px 20px;
+    height: 40px;
+    width: 100%;
+    border: 0;
+    border-radius: 500px;
+    text-overflow: ellipsis;
+  }
+
+  &__title-container {
+    width: 97%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    padding-top: 10px;
+  }
+
+  &__search-item-container {
+    background-color: $dark-gray;
+
+    @include desktop {
+      max-width: 98%;
+      margin: 0 auto;
+    }
+  }
+
+  &__search-item {
+    @include desktop {
+      max-width: 98%;
+      margin: 0 auto;
+
+      padding-bottom: 60px;
+
+      display: flex;
+      flex-wrap: wrap;
+    }
+  } 
+
+  &__tracks-container--hide {
+    overflow: hidden;
+    height: 370px;
+  }
+
+  &__artists-container--hide {
+    overflow: hidden;
+    height: 370px;
+  }
+
+  &__btn {
+    margin-left: 10px;
+    margin-bottom: 15px;
+  }
+}

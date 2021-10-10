@@ -1,0 +1,64 @@
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
+
+$dark-gray: #181818;
+$med-gray: #282828;
+$light-gray: #b3b3b3;
+$black: black;
+
+// SCSS Mixins
+@mixin tablet {
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
+  }
+}
+
+// SCSS Styles
+.album-tracks {
+    padding-top: 20px;
+
+    &__header {
+        margin-top: 20px;
+        
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__info-container {
+        margin-left: 15px;
+    }
+
+    &__type {
+        font-weight: 700;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+    &__name {
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        padding: 0.08em 0px;
+        font-size: 70px;
+        line-height: 96px;
+        font-weight: 900;
+        letter-spacing: -.04em;
+        visibility: visible;
+    }
+
+    &__img {
+        width: 192px;
+    }
+
+    &__list-container {
+        margin-top: 20px;
+    }
+}

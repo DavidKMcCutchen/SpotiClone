@@ -1,0 +1,59 @@
+<aside class="aside">
+  <div class="aside__title">
+    <img class="aside__img" src="assets/img/spotify-icon.png" alt="spotify image">
+    Spotify
+  </div>
+  <div class="aside__language-btn-container">
+    <button class="btn-template aside__language-btn"
+    (click)="seeLanguages()">
+    <span class="fas fa-angle-down aside__language-arrow-icon"></span>Languages
+  </button>
+  </div>
+  <div class="aside__language-container"
+  [ngClass]="moreLanguages ? 'show' : 'hide'">
+
+  <button class="btn-template aside__language-btn" [ngClass]="{'active': activeLanguage === 'en'}" (click)="switchLanguage('en')"> 🇺🇸
+    English <img class="aside__btn-icon" src="assets/img/usa.svg" alt="Usa flag">
+  </button>
+    <button class="btn-template aside__language-btn" [ngClass]="{'active': activeLanguage === 'pt'}" (click)="switchLanguage('pt')"> 🇧🇷
+      Português <img class="aside__btn-icon" src="assets/img/brazil.svg" alt="Brazil flag">
+    </button>
+    <button class="btn-template aside__language-btn" [ngClass]="{'active': activeLanguage === 'es'}" (click)="switchLanguage('es')"> 🇪🇸
+      Español <img class="aside__btn-icon" src="assets/img/spain.svg" alt="Spain flag">
+    </button>
+  </div>
+  <div class="aside__list-container">
+    <ul class="aside__list">
+      <li class="aside__list-item" routerLinkActive="active">
+        <a class="aside__list-anchor aside__list-anchor-home" routerLink="home">{{ 'nav-bar.home-text' | translate }}</a>
+      </li>
+      <li class="aside__list-item" routerLinkActive="active">
+        <a class="aside__list-anchor aside__list-anchor-search" routerLink="search">{{ 'nav-bar.search-text' | translate }}</a>
+      </li>
+    </ul>
+  </div>
+</aside>
+
+<div class="side-bar-btn">
+  <div class="side-bar-btn__img-container">
+    <img class="side-bar-btn__img" src="assets/img/spotify-icon.png" alt="spotify image">
+    Spotify
+  </div>
+  <div class="side-bar-btn__btn-container">
+    <button class="side-bar-btn__btn" (click)="openOrCloseNav()">☰</button>
+  </div>
+</div>
+
+<!-- Display side bar if openSideBar is true -->
+<div class="side-bar animated fadeIn" [ngClass]="openSideBar ? 'side-bar--visible' : 'side-bar--hide'">
+  <div>
+    <ul>
+      <li class="side-bar__list-item" routerLinkActive="active">
+        <a class="side-bar__anchor" routerLink="home">Home</a>
+      </li>
+      <li class="side-bar__list-item" routerLinkActive="active">
+        <a class="side-bar__anchor" routerLink="search">Search</a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<section id="artistId" class="artist-section animated fadeIn" *ngIf="artist !== null">
+  <div class="artist-section__header-container">
+      <div class="artist-section__btn-container">
+          <button class="back-btn" role="button" type="button" [routerLink]="['/search']">
+              <img src="assets/img/left-arrow.svg" alt="left arrow image">
+          </button>
+      </div>
+      <div class="artist-section__header-img-container">
+          <img class="artist-section__header-img" [src]="artist.images | errorImage" [alt]="artist.name">
+      </div>
+      <div class="artist-section__name-container">
+          <h2 class="artist-section__name">{{ artist.name }}</h2>
+      </div>
+      <div class="artist-section__followers-container">
+          <span>{{ artist.followers.total }} {{ "artist.followers" | translate }}</span>
+      </div>
+      <div class="artist-section__profile-btn-container">
+          <a class="btn-template" [href]="artist.external_urls.spotify"
+              target="_blank">{{ "artist.profile-btn" | translate }}</a>
+      </div>
+  </div>
+  <div class="artist-section__main-container">
+      <div class="artist-section__btn-container">
+          <!-- <button class="artist-section__general-btn artist-section__btn" routerLinkActive="activate-link"
+              [routerLink]="['/artist', artistId]">Overview</button> -->
+          <h3 class="artist-section__btn-title">{{ "artist.overview" | translate }}</h3>
+      </div>
+      <div class="artist-section__top-tracks-container"
+      [ngClass]="moreTracks ? 'show' : 'artist-section__top-tracks-container--hide'">
+          <h2 class="artist-section__top-tracks-title">{{ 'artist.title' | translate }}</h2>
+          <div class="artist-section__see-more-container">
+              <button class="btn-template"
+              (click)="seeMoreTracks()"
+              >{{ "artist.more-btn" | translate }}</button>
+          </div>
+          <div class="artist-section__top-tracks-list-container" *ngIf="topTracks.length > 0">
+              <ul class="artist-section__top-tracks-list">
+                  <app-artist-top-track [topTrack]="topTrack" *ngFor="let topTrack of topTracks">
+                  </app-artist-top-track>
+              </ul>
+          </div>
+      </div>
+      <div class="artist-section__albums-container"
+      [ngClass]="moreAlbums ? 'show' : 'artist-section__albums-container--hide'">
+          <h2 class="artist-section__albums-title">{{ "artist.album-title" | translate }}</h2>
+          <button class="btn-template"
+          (click)="seeMoreAlbums()"
+          >{{ "artist.more-btn" | translate }}</button>
+          <div class="artist-section__albums-list-container" *ngIf="albums.length > 0">
+              <app-artist-albums [album]="albums" *ngFor="let albums of albums"></app-artist-albums>
+          </div>
+      </div>
+      <div class="artist-section__float-btn-container" *ngIf="moreAlbums || moreTracks">
+          <a class="float-btn" (click)="scrollTo('artistId')">
+            <span class="fas fa-chevron-up float-btn-icon"></span>
+          </a>
+      </div>
+  </div>
+</section>

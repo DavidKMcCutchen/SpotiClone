@@ -1,0 +1,92 @@
+
+
+:host {
+  --background-color: #0009;
+  --background-window-color: #181818;
+  --warning-color: #be1622;
+  --general-color: #303133;
+  --button-background-color: #333;
+  --button-border-color: #5b5b5e;
+  --button-text-color: #fff;
+
+  display: block;
+  pointer-events: all;
+}
+
+.generic-modal-wrapper {
+  background-color: var(--background-color);
+  display: flex;
+  height: 0;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 0;
+  z-index: 10;
+}
+
+/*
+Para poder animar la apertura de la modal le ponemos ancho/alto 0
+Cuando se abre ocupa su ancho/alto correspondiente y se le da opacidad
+*/
+.generic-modal-wrapper--opened {
+  height: 100vh;
+  opacity: 1;
+  transition: opacity 200ms ease-in-out 100ms;
+  width: 100vw;
+}
+
+.generic-modal-window {
+  background-color: var(--background-window-color);
+  display: flex;
+  flex-direction: column;
+  // height: 200px;
+  height: auto;
+  margin: auto;
+  padding: 20px;
+  width: 400px;
+
+  @media (--desktop) {
+    height: auto;
+    width: 300px;
+  }
+}
+
+.generic-modal-window-header {
+  display: flex;
+  // margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+}
+
+.generic-modal-window-title {
+  flex: 1 1 auto;
+}
+
+.generic-modal-window-message {
+  // margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+}
+
+.generic-modal-window-icon {
+  border: 0;
+  display: flex;
+  height: 20px;
+  margin-left: auto;
+  position: relative;
+  width: 20px;
+
+  cursor: pointer;
+}
+
+.generic-modal-window-icon::before {
+  content: "X";
+  height: 20px;
+  left: 0;
+  line-height: 20px;
+  position: absolute;
+  top: 0;
+  width: 20px;
+}

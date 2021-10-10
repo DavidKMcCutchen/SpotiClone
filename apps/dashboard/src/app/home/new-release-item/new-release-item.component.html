@@ -1,0 +1,16 @@
+<div class="new-release-item animated fadeIn" *ngIf="newRelease" (click)="navigate(newRelease)">
+  <div class="new-release-item__img-container">
+      <img class="new-release-item__img" [src]="newRelease.images | errorImage" alt="newRelease.name" >
+  </div>
+  <div class="new-release-item__title-container">
+      <h4 class="new-release-item__title">{{ newRelease.name | uppercase}}</h4>
+  </div>
+  <div class="new-release-item__bottom-container">
+      <div class="new-release-item__artists-container" *ngFor="let artist of newRelease.artists">
+          <span class="new-release-item__artist">{{ artist.name }}</span>
+      </div>
+      <div class="new-release-item__type-container">
+          <p class="new-release-item__type">{{ newRelease.type | uppercase }}</p>
+      </div>
+  </div>
+</div>

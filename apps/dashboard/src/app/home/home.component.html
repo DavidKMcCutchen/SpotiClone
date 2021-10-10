@@ -1,0 +1,14 @@
+<div id="newReleasesId" class="new-releases">
+  <h2 class="new-releases__title">{{ 'home.title' | translate }}</h2>
+  <section class="new-releases__new-releases-section" *ngIf="newReleases.length > 0">
+      <app-new-release-item
+      [newRelease]="newRelease"
+      *ngFor="let newRelease of newReleases"
+      ></app-new-release-item>
+      <div class="new-releases__float-btn-container">
+          <a class="float-btn" (click)="scrollTo('newReleasesId')">
+            <span class="fas fa-chevron-up float-btn-icon"></span>
+          </a>
+      </div>
+  </section>
+</div>

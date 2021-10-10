@@ -1,0 +1,16 @@
+<li class="top-track-item" *ngIf="topTrack">
+  <div class="top-track-item__left">
+      <div class="top-track-item__img-container">
+          <img class="top-track-item__img" [src]="topTrack.album.images | errorImage" alt="{{ topTrack.name }}">
+      </div>
+      <div class="top-track-item__name-container">
+          <p class="top-track-item__name">{{ topTrack.name }}</p>
+      </div>
+      <div class="top-track-item__player" *ngIf="play">
+          <iframe class="top-track-item__audio" [src]="topTrack.uri | uri" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      </div>
+  </div>
+  <div class="top-track-item__player-btn-container">
+      <a class="top-track-item__player-anchor" (click)="player()">{{ "artist.song-preview" | translate }}</a>
+  </div>
+</li>

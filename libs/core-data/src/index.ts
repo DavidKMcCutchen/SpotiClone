@@ -1,0 +1,12 @@
+export { NewReleasesService } from './lib/services/new-releases/new-releases.service';
+export { ArtistService } from './lib/services/artist/artist.service';
+export { GlobalService } from './lib/services/global/global.service';
+export { AlbumService } from './lib/services/album/album.service';
+export { SearchService } from './lib/services/search/search.service';
+export { UserService } from './lib/services/user/user.service';
+export { CoreDataModule } from './lib/core-data.module';
+export { AuthService } from './lib/services/authentication/auth.service';
+export { TokenInterceptor } from './lib/services/authentication/token-interceptor.service';
+export { FeaturesAuthGuard } from './lib/services/authentication/auth-guard.service';
+export { FeaturesUnAuthGuard } from './lib/services/authentication/unauth-guard.service';
+export { NotificationsService } from './lib/services/notifications/notifications.service';

@@ -1,0 +1,92 @@
+<section class="search-section">
+  <div id="searchId" class="search-section__nav-bar">
+    <div class="search-section__btn-container">
+      <button
+        class="back-btn"
+        role="button"
+        type="button"
+        [routerLink]="['/home']"
+      >
+        <img src="assets/img/left-arrow.svg" alt="left arrow image" />
+      </button>
+    </div>
+    <div class="search-section__input-container">
+      <input
+        class="search-section__input"
+        type="text"
+        id="inputSearch"
+        placeholder="Search artist or track"
+        (keyup)="search(searchTerm.value)"
+        (keydown.backspace)="search(searchTerm.value)"
+        #searchTerm
+      />
+    </div>
+  </div>
+  <div class="search-section__search-item-container">
+    <div
+      class="search-section__artists-container"
+      [ngClass]="
+        moreArtists ? 'show' : 'search-section__artists-container--hide'
+      "
+      *ngIf="artistsList.length > 0"
+    >
+      <div class="search-section__title-container">
+        <h2 class="search-section__title">
+          {{ 'search.artist-title' | translate }}
+        </h2>
+      </div>
+      <button
+        class="btn-template search-section__btn"
+        (click)="seeMoreArtists()"
+      >
+        {{ 'search.more-btn' | translate }}
+      </button>
+      <div class="search-section__search-item">
+        <app-search-artist-item
+          [artist]="artist | translate"
+          *ngFor="let artist of artistsList"
+        ></app-search-artist-item>
+      </div>
+    </div>
+    <div
+      class="search-section__tracks-container"
+      [ngClass]="moreTracks ? 'show' : 'search-section__tracks-container--hide'"
+      *ngIf="tracksList.length > 0"
+    >
+      <div class="search-section__title-container">
+        <h2 class="search-section__title">
+          {{ 'search.tracks-title' | translate }}
+        </h2>
+      </div>
+      <button
+        class="btn-template search-section__btn"
+        (click)="seeMoreTracks()"
+      >
+        {{ 'search.more-btn' | translate }}
+      </button>
+      <div class="search-section__search-item">
+        <app-search-track-item
+          [track]="track"
+          *ngFor="let track of tracksList"
+        ></app-search-track-item>
+      </div>
+    </div>
+    <div
+      class="search-section__float-btn-container"
+      *ngIf="moreArtists || moreTracks"
+    >
+      <a class="float-btn" (click)="scrollTo('searchId')">
+        <span class="fas fa-chevron-up float-btn-icon"></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<app-search-modal [(showModal)]="showModal">
+  <div class="modal-body">
+    <h4>{{ 'modal.body' | translate }}</h4>
+    <button class="btn-template search-section__btn" routerLink="/search">
+      {{ 'modal.search-btn' | translate }}
+    </button>
+  </div>
+</app-search-modal>

@@ -1,0 +1,14 @@
+<div class="generic-modal-wrapper" [ngClass]="{ 'generic-modal-wrapper--opened': showModal }">
+  <div class="generic-modal-window">
+      <div class="generic-modal-window-header">
+          <span class="generic-modal-window-icon" (click)="closeShowModal()">
+          </span>
+          <div class="generic-modal-window-title">
+              <ng-content select=".modal-header"></ng-content>
+          </div>
+      </div>
+      <div class="generic-modal-window-message">
+          <ng-content select=".modal-body"></ng-content>
+      </div>
+  </div>
+</div>

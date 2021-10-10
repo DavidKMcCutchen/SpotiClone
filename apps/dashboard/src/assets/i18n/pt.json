@@ -1,0 +1,28 @@
+{
+  "nav-bar": {
+      "home-text": "Principal",
+      "search-text": "Buscar"
+    },
+  "home": {
+    "title": "Lançamentos Novos"
+  },
+  "artist": {
+    "followers": "seguidores",
+    "profile-btn": "Ver Perfil",
+    "overview": "Visão Geral",
+    "title": "Os Melhores",
+    "more-btn": "Ver Mais",
+    "album-title": "Álbuns",
+    "song-preview": "Antevisão"
+  },
+  "search": {
+    "placeholder": "Buscar Artistas ou Músicas ",
+    "artist-title": "Artistas",
+    "more-btn": "Veja Mais",
+    "tracks-title": "Músicas"
+  },
+  "modal": {
+    "body": "Desculpa...Artista ou Música não foi encontrado ",
+    "search-btn": "Busca de Novo"
+  }
+}

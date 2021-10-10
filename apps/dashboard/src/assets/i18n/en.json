@@ -1,0 +1,28 @@
+{
+  "nav-bar": {
+      "home-text": "Home",
+      "search-text": "Search"
+    },
+  "home": {
+    "title": "New Releases"
+  },
+  "artist": {
+    "followers": "followers",
+    "profile-btn": "View Profile",
+    "overview": "Overview",
+    "title": "Top Tracks",
+    "more-btn": "See More",
+    "album-title": "Albums",
+    "song-preview": "Preview"
+  },
+  "search": {
+    "placeholder": "Search artist or track",
+    "artist-title": "Artists",
+    "more-btn": "See More",
+    "tracks-title": "Songs"
+  },
+  "modal": {
+    "body": "Sorry... artist or track not found",
+    "search-btn": "Search again"
+  }
+}

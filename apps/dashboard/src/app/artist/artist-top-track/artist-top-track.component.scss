@@ -1,0 +1,98 @@
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
+
+$dark-gray: #181818;
+$med-gray: #282828;
+$light-gray: #b3b3b3;
+$black: black;
+
+// SCSS Mixins
+@mixin tablet {
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
+  }
+}
+
+// SCSS Styles
+.top-track-item {
+  margin-bottom: 6px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__player-btn-container {
+    padding-right: 5px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__duration {
+    margin-right: 10px;
+  }
+
+  &__player-btn {
+    color: #fff;
+    font-size: 20px;
+  }
+
+  &__img {
+    padding-top: 5px;
+    padding-left: 5px;
+    width: 50px;
+  }
+
+  &__name-container {
+    margin-left: 15px;
+  }
+
+  &__name {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.015em;
+  }
+
+  &__player-anchor {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    padding: 7px 15px;
+    border: 1px solid hsla(0, 0%, 100%, 0.3);
+    box-sizing: border-box;
+    border-radius: 4px;
+    border-color: #fff;
+  }
+
+  &__player {
+    padding-top: 5px;
+    margin-left: 15px;
+  }
+}
+
+.top-track-item:hover {
+  background-color: $med-gray;
+}

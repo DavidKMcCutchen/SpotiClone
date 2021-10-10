@@ -1,0 +1,28 @@
+{
+  "nav-bar" : {
+      "home-text": "Principal",
+      "search-text": "Buscar"
+    },
+  "home": {
+      "title": "Nuevos Lanzamientos"
+    },
+  "artist": {
+    "followers": "seguidores",
+    "profile-btn": "Ver Perfil",
+    "overview": "Resumen",
+    "title": "Pistas Principales",
+    "more-btn": "Ver Más",
+    "album-title": "Álbumes",
+    "song-preview": "Vista previa"
+  },
+  "search": {
+    "placeholder": "Busca por artista o pista",
+    "artist-title": "Artistas",
+    "more-btn": "Ver Más",
+    "tracks-title": "Canciones"
+  },
+  "modal": {
+    "body": "Lo siento... no se ha encontrado el artista o la pista",
+    "search-btn": "Busca de nuevo"
+  }
+}
