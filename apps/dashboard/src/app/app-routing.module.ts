@@ -1,3 +1,5 @@
+import { UserComponent } from 'libs/common-ui/src/lib/user/user.component';
+import { AlbumComponent } from './album/album.component';
 import { SearchComponent } from './search/search.component';
 import { CallbackComponent, LoginComponent } from '@capstone-project/common-ui';
 import { AppComponent } from './app.component';
@@ -6,7 +8,6 @@ import { Route, RouterModule } from "@angular/router";
 import { FeaturesUnAuthGuard } from '@capstone-project/core-data';
 import { WildComponent } from '@capstone-project/ui-login';
 import { HomeComponent } from './home/home.component';
-import { ArtistAlbumsComponent } from './artist/artist-albums/artist-albums.component';
 import { ArtistComponent } from './artist/artist.component';
 
 
@@ -19,8 +20,10 @@ const routes: Route[] = [
   {path: 'search', component: SearchComponent},
   {path: 'search/:term', component: SearchComponent},
   {path: 'artist/:id', component: ArtistComponent },
-  {path: 'album/:id', component: ArtistAlbumsComponent },
+  {path: 'album/:id', component: AlbumComponent },
+  {path: 'user', component: UserComponent},
   {path: '**', redirectTo: 'wild', pathMatch: 'full'}
+
 ]
 
 @NgModule({

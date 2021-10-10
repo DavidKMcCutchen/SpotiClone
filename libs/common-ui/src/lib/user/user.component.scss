@@ -1,0 +1,20 @@
+.user {
+  padding: 10px;
+  margin-bottom: 20px;
+  transform: translate(1630px, 10px);
+  background-image: local;
+  background-repeat: no-repeat;
+  background-size: cover;
+};
+
+.user_image_container {
+  text-align: center;
+};
+
+.user_img {
+  width: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: translate(-12px, -20px);
+}
+

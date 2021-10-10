@@ -10,7 +10,7 @@
       </div>
       <div class="album-tracks__info-container">
           <div class="album-tracks__type-container" *ngIf="album.type">
-              <p class="album-tracks__type">{{ album.type | uppercase}}</p>
+              <p class="album-tracks__type">{{ album.type | translate | uppercase}}</p>
           </div>
           <div class="album-tracks__name-container" *ngIf="album.name">
               <h1 class="album-tracks__name">{{ album.name }}</h1>

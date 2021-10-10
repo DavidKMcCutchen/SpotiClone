@@ -1,3 +1,4 @@
+import { PipesModule } from '@capstone-project/pipes';
 import { MaterialModule } from '@capstone-project/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,12 +10,13 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [
     LoginComponent,
-    CallbackComponent,
+    CallbackComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     CoreDataModule,
+    PipesModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

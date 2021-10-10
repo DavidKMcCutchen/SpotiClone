@@ -6,6 +6,9 @@
   "home": {
     "title": "New Releases"
   },
+  "new-release-item": {
+    "type": "Album"
+  },
   "artist": {
     "followers": "followers",
     "profile-btn": "View Profile",
