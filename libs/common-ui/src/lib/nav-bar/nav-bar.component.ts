@@ -1,8 +1,10 @@
-import { Router } from '@angular/router';
+import { UserAPI } from '@capstone-project/api-interfaces';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { GlobalService } from '@capstone-project/core-data';
-import { CommonModule } from '@angular/common';
+import { UserService } from '@capstone-project/core-data';
+import { FormControl } from '@angular/forms';
+import { TooltipPosition } from '@angular/material/tooltip';
+import { ErrorImagesPipe } from 'libs/pipes/src/lib/pipes/error-images.pipes';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,16 +12,24 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  public openSideBar: boolean = false;
-  public activeLanguage: string = 'en';
-  public moreLanguages: boolean = false;
+  openSideBar: boolean = false;
+  activeLanguage: string = 'en';
+  moreLanguages: boolean = false;
+  user: UserAPI;
+  positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
+  position = new FormControl(this.positionOptions[0]);
 
-  constructor( private translate: TranslateService ) {
+  constructor(
+    private translate: TranslateService,
+    private userService: UserService
+    ) {
     // set default language
     this.translate.setDefaultLang(this.activeLanguage);
   }
 
-  ngOnInit(): void { /*empty*/ }
+  ngOnInit(): void {
+    this.getUser();
+  }
 
   // update variable which controls side bar visibility
   openOrCloseNav(): void {
@@ -34,5 +44,16 @@ export class NavBarComponent implements OnInit {
 
   seeLanguages(): void {
     this.moreLanguages = !this.moreLanguages;
+  };
+  getUser(): void {
+    this.userService.getUserProfile().subscribe((user: UserAPI) => {
+      this.user = user;
+      console.log('User Data:', user);
+    }, (err) => {
+      console.log('User Error:', err);
+      console.error(err.message);
+    }, () => {
+      console.log('User Complete')
+    });
   }
 }

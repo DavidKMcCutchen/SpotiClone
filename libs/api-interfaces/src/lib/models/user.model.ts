@@ -1,5 +1,7 @@
 export interface UserAPI {
+  country: string;
   display_name: string;
+  email: string;
   external_urls: Externalurls;
   followers: Followers;
   href: string;
@@ -7,6 +9,7 @@ export interface UserAPI {
   images: Image[];
   type: string;
   uri: string;
+  product: string;
 }
 
 interface Image {

@@ -1,7 +1,9 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { UserAPI } from '@capstone-project/api-interfaces';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '@capstone-project/core-data';
 import { ActivatedRoute } from '@angular/router';
+import { PipesModule } from '@capstone-project/pipes';
 
 @Component({
   selector: 'app-user',

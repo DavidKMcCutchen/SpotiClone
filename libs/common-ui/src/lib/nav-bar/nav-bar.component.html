@@ -57,3 +57,15 @@
     </ul>
   </div>
 </div>
+
+
+<mat-toolbar>
+  <span class="spacer"></span>
+  <button class="user" type="button" mat-mini-fab routerLink="/user" mat-tooltip="User">
+    <mat-icon>
+      <div class=user_image_container>
+      <img class="user_img" [src]="user.images | errorImage" alt="user image">
+    </div>
+    </mat-icon>
+  </button>
+</mat-toolbar>

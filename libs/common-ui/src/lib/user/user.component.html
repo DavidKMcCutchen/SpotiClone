@@ -1,20 +1,23 @@
-<mat-toolbar>
-  <span class="spacer"></span>
-  <button class="user" type="button" mat-mini-fab routerLink="/user" mat-tooltip="User">
-    <mat-icon>
-      <div class=user_image_container>
-      <img class="user_img" [src]="user.images | errorImage" alt="user image">
-    </div>
-    </mat-icon>
-  </button>
-</mat-toolbar>
+<h1 class="account-overview">Account Overview</h1>
+<h2 class="profile">Profile</h2>
+
+<div class="profile-username-container" *ngIf="user.display_name">
+    <p class="profile-user__username">Username: {{ user.display_name }}</p>
+</div>
+<div class="profile-email-container" *ngIf="user.email">
+  <p class="profile-user__email">Email: {{ user.email }}</p>
+</div>
+<div class="profile-followers-container" *ngIf="user.followers.total">
+  <p class="profile-user__followers">Followers: {{ user.followers.total }}</p>
+</div>
+<div class="profile-country-container" *ngIf="user.country">
+  <p class="profile-user__country">Country or Region: {{ user.country }}</p>
+</div>
+<div class="plan-container">
+  <h3>Your Plan</h3>
+  <div class="plan-product-container"  *ngIf="user.product">
+    <p class="profile-user__country">Plan: {{ user.product }}</p>
+  </div>
+</div>
 
 
-<!-- <mat-tab-group>
-  <mat-tab>
-      <ng-template mat-tab-label>
-          <img class= [src]="user.images | errorImage" alt="user image" >
-          <span>foo</span>
-      </ng-template>
-  </mat-tab>
-</mat-tab-group> -->
