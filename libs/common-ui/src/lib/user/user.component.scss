@@ -1,20 +1,116 @@
-.user {
-  padding: 10px;
-  margin-bottom: 20px;
-  transform: translate(1630px, 10px);
-  background-image: local;
-  background-repeat: no-repeat;
-  background-size: cover;
-};
+// SCSS Variables
+$layout_bp_mobile: 360px;
+$layout_bp_tablet: 800px;
+$layout_bp_desktop: 1000px;
 
-.user_image_container {
-  text-align: center;
-};
+$dark-gray: #282828;
+$light-gray: #b3b3b3;
+$black: black;
+$white: white;
 
-.user_img {
-  width: 55px;
-  border-radius: 50%;
-  object-fit: cover;
-  transform: translate(-12px, -20px);
+body {
+  background-color: white;
 }
+
+// SCSS Mixins
+@mixin tablet {
+  @media only screen and (min-width: $layout_bp_tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $layout_bp_desktop) {
+    @content;
+  }
+}
+
+// SCSS Styles
+.profile-container {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+    background-color: $dark-gray;
+
+    @include desktop {
+      width: 270px;
+      height: 300px;
+
+      cursor: pointer;
+    };
+
+    .profile-container_image-button {
+      width: 110px;
+    };
+
+    .profile-container_username-view{
+      font-size: medium;
+      margin-left: auto;
+    };
+
+    .profile-container_email-view{
+      font-size: medium;
+      margin-left: auto;
+    };
+
+    .profile-container_followers-view{
+      font-size: medium;
+    };
+
+    .profile-container_country-view{
+      font-size: medium;
+    };
+
+    // &__img-button {
+    //     width: 50px;
+    // }
+
+    // &__title {
+    //   margin-bottom: 20px;
+    //   font-size: 18px;
+
+    //   @include desktop {
+    //     font-size: 15px;
+    //   }
+    // }
+
+    // &__bottom-container {
+    //   display: flex;
+    //   flex-direction: row;
+    //   justify-content: flex-start;
+
+    //   align-items: baseline;
+    // }
+
+    // &__artist {
+    //   margin-right: 5px;
+
+    //   @include desktop {
+    //     font-size: 11px;
+    //   }
+    // }
+
+    // &__type-container {
+    //   margin-left: 20px;
+    //   border-radius: 20px;
+
+    //   background-color: #181818;
+    // }
+
+    // &__type {
+    //   margin: 0px;
+    //   padding: 5px 10px 5px 10px;
+
+    //   letter-spacing: 2px;
+    //   font-weight: 500;
+
+    //   @include desktop {
+    //     font-size: 11px;
+    //   }
+    // }
+}
+
 

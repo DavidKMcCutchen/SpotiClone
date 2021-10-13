@@ -7,7 +7,7 @@ import { TokenInterceptor } from '@capstone-project/core-data';
   imports: [
     CommonModule,
     HttpClientModule,
-    ],
+    ]
 })
 
 export class CoreDataModule {}

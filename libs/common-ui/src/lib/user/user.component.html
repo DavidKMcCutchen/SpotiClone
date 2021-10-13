@@ -1,20 +1,25 @@
 <h1 class="account-overview">Account Overview</h1>
 <h2 class="profile">Profile</h2>
+<div class="profile-container">
+  <div class="profile-container_image" *ngIf="user.display_name">
+    <img class="profile-container_image-button" [src]="user.images | errorImage" alt="user image">
+</div>
+<div class="profile-container_username" *ngIf="user.display_name">
+    <p class="profile-container_username-view">Username: {{ user.display_name }}</p>
+</div>
+<div class="profile-container_email" *ngIf="user.email">
+  <p class="profile-container_email-view">Email: {{ user.email }}</p>
+</div>
+<div class="profile-container_followers" *ngIf="user.followers.total">
+  <p class="profile-container_followers-view">Followers: {{ user.followers.total }}</p>
+</div>
+<div class="profile-container_country" *ngIf="user.country">
+  <p class="profile-container_country-view">Country or Region: {{ user.country }}</p>
+</div>
+</div>
 
-<div class="profile-username-container" *ngIf="user.display_name">
-    <p class="profile-user__username">Username: {{ user.display_name }}</p>
-</div>
-<div class="profile-email-container" *ngIf="user.email">
-  <p class="profile-user__email">Email: {{ user.email }}</p>
-</div>
-<div class="profile-followers-container" *ngIf="user.followers.total">
-  <p class="profile-user__followers">Followers: {{ user.followers.total }}</p>
-</div>
-<div class="profile-country-container" *ngIf="user.country">
-  <p class="profile-user__country">Country or Region: {{ user.country }}</p>
-</div>
 <div class="plan-container">
-  <h3>Your Plan</h3>
+  <h2>Your Plan</h2>
   <div class="plan-product-container"  *ngIf="user.product">
     <p class="profile-user__country">Plan: {{ user.product }}</p>
   </div>

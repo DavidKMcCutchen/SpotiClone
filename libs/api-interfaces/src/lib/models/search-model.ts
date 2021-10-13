@@ -36,9 +36,9 @@ export interface Followers {
 }
 
 export interface Image {
-  height: number;
+  height: any;
   url: string;
-  width: number;
+  width: any;
 }
 
 export enum ArtistType {

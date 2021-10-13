@@ -1,3 +1,6 @@
+import { SharedTranslate } from './translate/shared.module';
+import { UserComponent } from './user/user.component';
+import { NavBarComponent } from 'libs/common-ui/src/lib/nav-bar/nav-bar.component';
 import { PipesModule } from '@capstone-project/pipes';
 import { MaterialModule } from '@capstone-project/material';
 import { NgModule } from '@angular/core';
@@ -10,19 +13,21 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [
     LoginComponent,
-    CallbackComponent
-  ],
+    CallbackComponent,
+    UserComponent],
+
   imports: [
     CommonModule,
     MaterialModule,
     CoreDataModule,
-    PipesModule
+    PipesModule,
+    SharedTranslate
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi: true
   }],
-  exports: [LoginComponent, CallbackComponent]
+  exports: [LoginComponent, CallbackComponent, UserComponent]
 })
 export class CommonUiModule {}

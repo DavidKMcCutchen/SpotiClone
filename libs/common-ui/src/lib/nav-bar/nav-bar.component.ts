@@ -1,10 +1,11 @@
-import { UserAPI } from '@capstone-project/api-interfaces';
+import { UserAPI, Image } from '@capstone-project/api-interfaces';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { UserService } from '@capstone-project/core-data';
 import { FormControl } from '@angular/forms';
 import { TooltipPosition } from '@angular/material/tooltip';
-import { ErrorImagesPipe } from 'libs/pipes/src/lib/pipes/error-images.pipes';
+import { AuthService } from 'libs/core-data/src/lib/services/authentication/auth.service';
+
 
 @Component({
   selector: 'app-nav-bar',
@@ -15,13 +16,14 @@ export class NavBarComponent implements OnInit {
   openSideBar: boolean = false;
   activeLanguage: string = 'en';
   moreLanguages: boolean = false;
-  user: UserAPI;
+  user: any | null = null;
   positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
 
   constructor(
     private translate: TranslateService,
-    private userService: UserService
+    private userService: UserService,
+    private authService: AuthService
     ) {
     // set default language
     this.translate.setDefaultLang(this.activeLanguage);
@@ -45,6 +47,7 @@ export class NavBarComponent implements OnInit {
   seeLanguages(): void {
     this.moreLanguages = !this.moreLanguages;
   };
+
   getUser(): void {
     this.userService.getUserProfile().subscribe((user: UserAPI) => {
       this.user = user;
@@ -55,5 +58,12 @@ export class NavBarComponent implements OnInit {
     }, () => {
       console.log('User Complete')
     });
+  };
+
+
+  logout() {
+    this.authService.logout();
   }
+
+
 }

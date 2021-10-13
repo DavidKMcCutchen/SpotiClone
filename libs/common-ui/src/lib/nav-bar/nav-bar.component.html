@@ -3,6 +3,17 @@
     <img class="aside__img" src="assets/img/spotify-icon.png" alt="spotify image">
     Spotify
   </div>
+  <!-- <div class="user_profile_container">
+    <button mat-button [matMenuTriggerFor]="menu" mat-mini-fab >User
+      <div class=user_image_container>
+        <img class="user_img" [src]="user!.images | errorImage" alt="user image">
+      </div>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/user" mat-tooltip="User">Account Overview</button>
+      <button mat-menu-item  (click)="logout()">Logout</button>
+    </mat-menu>
+    </div>   -->
   <div class="aside__language-btn-container">
     <button class="btn-template aside__language-btn"
     (click)="seeLanguages()">
@@ -44,6 +55,18 @@
   </div>
 </div>
 
+<div class="side-bar-btn">
+  <div class="side-bar-btn__img-container">
+    <img class="side-bar-btn__img" src="assets/img/spotify-icon.png" alt="spotify image">
+    Spotify
+  </div>
+  <div class="side-bar-btn__btn-container">
+    <button class="side-bar-btn__btn" (click)="openOrCloseNav()">☰</button>
+  </div>
+</div>
+
+
+
 <!-- Display side bar if openSideBar is true -->
 <div class="side-bar animated fadeIn" [ngClass]="openSideBar ? 'side-bar--visible' : 'side-bar--hide'">
   <div>
@@ -59,13 +82,4 @@
 </div>
 
 
-<mat-toolbar>
-  <span class="spacer"></span>
-  <button class="user" type="button" mat-mini-fab routerLink="/user" mat-tooltip="User">
-    <mat-icon>
-      <div class=user_image_container>
-      <img class="user_img" [src]="user.images | errorImage" alt="user image">
-    </div>
-    </mat-icon>
-  </button>
-</mat-toolbar>
+

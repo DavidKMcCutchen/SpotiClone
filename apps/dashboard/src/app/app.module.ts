@@ -27,7 +27,6 @@ import { ArtistAlbumsComponent } from './artist/artist-albums/artist-albums.comp
 import { ArtistTopTrackComponent } from './artist/artist-top-track/artist-top-track.component';
 import { NewReleaseItemComponent } from './home/new-release-item/new-release-item.component';
 import { AlbumComponent } from './album/album.component';
-import { UserComponent } from 'libs/common-ui/src/lib/user/user.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -35,7 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent,  NavBarComponent, SearchComponent, SearchModalComponent, SearchArtistItemComponent, SearchTrackItemComponent, ArtistComponent, ArtistAlbumsComponent, ArtistTopTrackComponent, NewReleaseItemComponent, AlbumComponent, UserComponent],
+  declarations: [AppComponent, HomeComponent, SearchComponent, SearchModalComponent, SearchArtistItemComponent, SearchTrackItemComponent, ArtistComponent, ArtistAlbumsComponent, ArtistTopTrackComponent, NewReleaseItemComponent, AlbumComponent, NavBarComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

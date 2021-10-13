@@ -1,4 +1,4 @@
-import { CoreDataModule } from './../../../core-data/src/lib/core-data.module';
+import { CoreDataModule } from '@capstone-project/core-data';
 import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";

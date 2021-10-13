@@ -9,7 +9,7 @@ import { AuthService } from '@capstone-project/core-data';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -18,5 +18,9 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login();
   };
+
+  // login() {
+  //   this.authFacade.loginRequest();
+  // }
 
 }
