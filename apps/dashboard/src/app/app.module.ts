@@ -57,7 +57,7 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     })],
-    providers: [{
+    providers: [NavBarComponent,{
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true

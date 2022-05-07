@@ -1,4 +1,32 @@
+<!-- <div class="example">
+
+  <div class="user_profile_container">
+  <button mat-button [matMenuTriggerFor]="menu" mat-mini-fab >User
+    <div class=user_image_container>
+      <img class="user_img" [src]="user!.images | errorImage" alt="user image">
+    </div>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/user" mat-tooltip="User">Account Overview</button>
+    <button mat-menu-item  (click)="logout()">Logout</button>
+  </mat-menu>
+</div>
+</div> -->
 <div class="component__container">
+  <!-- <div class="example">
+
+  <div class="user_profile_container">
+  <button mat-button [matMenuTriggerFor]="menu" mat-mini-fab >User
+    <div class=user_image_container>
+      <img class="user_img" [src]="user!.images | errorImage" alt="user image">
+    </div>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/user" mat-tooltip="User">Account Overview</button>
+    <button mat-menu-item  (click)="logout()">Logout</button>
+  </mat-menu>
+</div>
+</div> -->
   <app-nav-bar></app-nav-bar>
   <router-outlet></router-outlet>
 </div>
