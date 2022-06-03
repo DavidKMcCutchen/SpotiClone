@@ -25,3 +25,20 @@ export interface Image {
   url: string;
   width: number;
 }
+
+export const emptyArtist: APIArtist = {
+  external_urls: 
+  {spotify: ''},
+  followers: {
+    href: null,
+    total: 9999
+  },
+  genres: [],
+  href: '',
+  id: '',
+  images: [],
+  name: '',
+  popularity: 101932,
+  type: '',
+  uri: ''
+}

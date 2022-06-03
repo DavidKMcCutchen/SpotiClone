@@ -2,6 +2,9 @@ import { ArtistService, GlobalService } from '@capstone-project/core-data';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { ArtistFacade } from '@capstone-project/core-state';
+import { APIArtist } from '@capstone-project/api-interfaces';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -16,10 +19,12 @@ export class ArtistComponent implements OnInit {
   albums: any[] = [];
   moreAlbums: boolean = false;
   moreTracks: boolean = false;
+  selectedArtist$: Observable<APIArtist> = this.artistFacade.selectedArtists$;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private artistService: ArtistService
+    private artistService: ArtistService,
+    private artistFacade: ArtistFacade
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +40,11 @@ export class ArtistComponent implements OnInit {
       console.log('Activated Route Id', params.id)
     });
   };
+
+  // getArtist(): Observable<APIArtist> {
+  //   return this.artistFacade.loadArtist(this.artistId).subscribe((artist: APIArtist) => (
+  //     this.artist = artist ))
+  // };
 
   getArtist(): void {
     this.artistService.getArtist(this.artistId).subscribe((artist: any) => {

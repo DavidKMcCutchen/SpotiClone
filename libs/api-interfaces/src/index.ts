@@ -1,7 +1,7 @@
 export { APIRelatedArtists, Artist } from './lib/models/artist.related-artists';
 export { APIArtistTracks, Track } from './lib/models/artist.top-track';
 export { AlbumItem, APIArtistAlbums } from './lib/models/artist.albums';
-export { APIArtist } from './lib/models/artist.model';
+export { APIArtist, emptyArtist } from './lib/models/artist.model';
 export { APIAlbums } from './lib/models/album.model';
 export * from './lib/models/search-model';
 export * from './lib/models/spotify-api-params';
