@@ -5,6 +5,7 @@ import { map, filter } from "rxjs/operators";
 import * as ArtistActions from './artist.actions';
 import * as ArtistSelectors from './artist.selectors';
 import * as fromArtists from './artist.reducer';
+import { Observable } from "rxjs";
 
 
 
@@ -30,7 +31,7 @@ export class ArtistFacade {
         };
 
         loadArtist(artistId: string) {
-            this.dispatch(ArtistActions.loadArtist({ artistId }))
+            this.dispatch(ArtistActions.loadArtist({ artistId }));
         };
 
 
