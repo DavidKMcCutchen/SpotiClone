@@ -46,6 +46,20 @@ export class ArtistEffects {
       })
   )} )
 
+  loadArtistAlbums$ = createEffect(() =>
+  {return this.actions$.pipe(
+      ofType(ArtistActions.loadArtistAlbums),
+      fetch({
+          run: (action) =>
+            this.artistService
+            .getArtistAlbums(action.artistId)
+            .pipe(
+                map((artistAlbums: AlbumItem[]) => ArtistActions.loadArtistAlbumsSuccess({ artistAlbums }))
+            ),
+        onError: (action, error) => ArtistActions.loadArtistAlbumsFailed({ error })     
+      })
+  )} )
+
   constructor(
     private actions$: Actions,
     private artistService: ArtistService
